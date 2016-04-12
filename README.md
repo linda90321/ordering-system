@@ -1,5 +1,7 @@
 ##Hungry Hacker Challenge----ordering-system
 
+https://cloud.githubusercontent.com/assets/9245869/14477707/804d6cb4-00c4-11e6-9fa1-7b6d5d0fc0f6.png
+
 This weekend there will be a giant food festival in Pioneer Square, and your culinary friend (Master Chef Emeril) would like to cash in. The problem is he's lacking the tech to take orders and doesn't have the time to find a solution.
 
 That's where you come in! As an engineer and entrepreneur at heart, you offer to create him an ordering system for a mere 20% of the profits.
