@@ -13,7 +13,8 @@ var mongoose = require('mongoose'),
  
 var FoodSchema = new Schema({
     name: String,
-    price: String
+    price: String,
+    quantity:String
 });
 
  

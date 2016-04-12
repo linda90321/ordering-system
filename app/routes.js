@@ -29,6 +29,7 @@ module.exports = function (app) {
         Food.create({
             name: req.body.name,
             price: req.body.price,
+            quantity: req.body.quantity,
             done: false
         }, function (err, foods) {
             if (err)
@@ -62,7 +63,7 @@ module.exports = function (app) {
             }
             var count=0;
             foods.forEach(function(food){
-                count+=parseInt(food.price);
+                count+=parseInt(food.price) * parseInt(food.quantity);
             });
             var tax = count * 0.075;
             var total = count * 1.075;

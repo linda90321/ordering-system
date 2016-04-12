@@ -1,98 +1,100 @@
 <!doctype html>
-
 <!-- ASSIGN OUR ANGULAR MODULE -->
 <html ng-app="foodOrder">
-<head>
-	<!-- META -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
-
-	<title>Food Ordering System App</title>
-
-	<!-- SCROLLS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<style>
-		html 					{ overflow-y:scroll; }
-		body 					{ padding-top:50px; }
-		#food-list 				{ margin-bottom:30px; }
-		#food-form 	 			{ margin-bottom:50px; }
-	</style>
-
-	<!-- SPELLS -->
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-
-	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
-	<script src="js/services/foods.js"></script> <!-- load our food service -->
-	<script src="js/core.js"></script> <!-- load our main application -->
-
-</head>
-<!-- SET THE CONTROLLER -->
-<body ng-controller="mainController">
-	<div class="container">
-
-		<!-- HEADER AND Food COUNT -->
-		<div class="jumbotron text-center">
-			<h1>Food Ordering System <span class="label label-info">{{ foods.length }}</span></h1>
-		</div>
-
-		<!-- Food LIST -->
-		<div id="food-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-
-				
-
-				<!-- LOOP OVER THE FoodS IN $scope.foods -->
-				<div class="checkbox" ng-repeat="food in foods">
-					<label>
-						<input type="checkbox" ng-click="deleteFood(food._id)"> {{ food.name }} {{ food.price }}
-
-					</label>
-				</div>
-				<p> {{ total.Tax }} </P>
-				<p> {{ total.Total }} </P>
-				<p class="text-center" ng-show="loading">
-					<span class="fa fa-spinner fa-spin fa-3x"></span>
-				</p>
-
-			</div>
-		</div>
-
-		<!-- FORM TO CREATE FoodS -->
-		<div id="food-form" class="row">
-			<div class="col-sm-8 col-sm-offset-2 text-center">
-				<form>
-					<div class="form-group">
+   <head>
+      <!-- META -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Optimize mobile viewport -->
+      <title>Food Ordering System App</title>
+      <!-- SCROLLS -->
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+      <!-- load bootstrap -->
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+      <style>
+         html 					{ overflow-y:scroll; }
+         body 					{ padding-top:50px; }
+         #food-list 				{ margin-bottom:30px; }
+         #food-form 	 			{ margin-bottom:50px; }
+      </style>
+      <!-- SPELLS -->
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+      <script src="js/controllers/main.js"></script> <!-- load up our controller -->
+      <script src="js/services/foods.js"></script> <!-- load our food service -->
+      <script src="js/core.js"></script> <!-- load our main application -->
+   </head>
+   <!-- SET THE CONTROLLER -->
+   <body ng-controller="mainController">
+      <div class="container">
+         <!-- HEADER AND Food COUNT -->
+         <div class="jumbotron text-center">
+            <h1>Food Ordering System <span class="label label-info">{{ foods.length }}</span></h1>
+         </div>
+         <!-- Food LIST -->
+         <div id="food-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+               <div class = "row">
+                  <div class = "col-md-4">
+                     <b>Name</b>
+                  </div>
+                  <div class = "col-md-4">
+                     <b>Price</b>
+                  </div>
+                  <div class = "col-md-4">
+                     <b>Quantity</b>
+                  </div>
+               </div>
+               <div class = "row">
+                  <!-- LOOP OVER THE FoodS IN $scope.foods -->
+                  <div class="checkbox" ng-repeat="food in foods">
+                     <label>
+                        <input type="checkbox" ng-click="deleteFood(food._id)"> 
                         <div class = "col-md-4">
-						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-						<input type="text" class="form-control input-lg text-center" placeholder="Food Name" ng-model="formData.name">
-					</div>
-					<div class = "col-md-4">
-						<input type="text" class="form-control input-lg text-center" placeholder="Food Price" ng-model="formData.price">
-					</div>
-
-					<div class = "col-md-4">
-					<!-- createFood() WILL CREATE NEW FoodS -->
-					     <button type="submit" class="btn btn-primary btn-lg" ng-click="createFood()">Add Food</button>
-				    </div>
-
-					</div>
-
-					
-					
-					 <button type="submit" class="btn btn-primary btn-lg" ng-click="totalPrice()" style="margin-top:20px;width:100%;" >Total Price</button>
-					
-					
-				</form>
-			</div>
-		</div>
-
-		<div class="text-center text-muted">
-			<p>A demo by <a href="https://github.com/linda90321/ordering-system">Na Li</a>.</p>
-	
-		</div>
-
-	</div>
-
-</body>
+                           {{ food.name }}
+                        </div>
+                        <div class = "col-md-4">
+                           {{ food.price }}
+                        </div>
+                        <div class = "col-md-4">
+                           {{ food.quantity }}
+                        </div>
+                     </label>
+                  </div>
+               </div>
+               <p> {{ total.Tax }} </P>
+               <p> {{ total.Total }} </P>
+               <p class="text-center" ng-show="loading">
+                  <span class="fa fa-spinner fa-spin fa-3x"></span>
+               </p>
+            </div>
+         </div>
+         <!-- FORM TO CREATE FoodS -->
+         <div id="food-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+               <form>
+                  <div class="form-group">
+                     <div class = "col-md-3">
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input type="text" class="form-control input-lg text-center" placeholder="Food Name" ng-model="formData.name">
+                     </div>
+                     <div class = "col-md-3">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Food Price" ng-model="formData.price">
+                     </div>
+                     <div class = "col-md-3">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Food Quantity" ng-model="formData.quantity">
+                     </div>
+                     <div class = "col-md-3">
+                        <!-- createFood() WILL CREATE NEW FoodS -->
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="createFood()">Add Food</button>
+                     </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg" ng-click="totalPrice()" style="margin-top:20px;width:100%;" >Total Price</button>
+               </form>
+            </div>
+         </div>
+         <div class="text-center text-muted">
+            <p>A demo by <a href="https://github.com/linda90321/ordering-system">Na Li</a>.</p>
+         </div>
+      </div>
+   </body>
 </html>
