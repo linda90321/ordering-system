@@ -1,7 +1,7 @@
 {
   "name"         : "node-todo",
   "version"      : "0.0.1",
-  "description"  : "Simple todo application.",
+  "description"  : "Food Ordering System Appication.",
   "main"         : "server.js",
   "author"       : "Na Li",
   "dependencies" : {
@@ -13,7 +13,7 @@
   },
   "repository": {
   "type": "git",
-  "url": "git@github.com:scotch-io/node-todo.git"
+  "url": "git@github.com:linda90321/ordering-system.git"
    },
 
   "license": "UNLICENSED"

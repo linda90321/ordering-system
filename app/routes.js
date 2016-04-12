@@ -51,8 +51,24 @@ module.exports = function (app) {
             getFoods(res);
         });
     });
+        
 
-
+    // total price of foods
+    app.get('/api/total', function (req, res) {
+        Food.find(function (err, foods) {
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err) {
+                res.send(err);
+            }
+            var count=0;
+            foods.forEach(function(food){
+                count+=parseInt(food.price);
+            });
+            var tax = count * 0.075;
+            var total = count * 1.075;
+            res.json({Tax: "Tax : "+tax, Total:"Total : "+total}); // return all foods in JSON format
+        });
+    });
 
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {

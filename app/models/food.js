@@ -15,5 +15,6 @@ var FoodSchema = new Schema({
     name: String,
     price: String
 });
+
  
 module.exports = mongoose.model('Food', FoodSchema);
