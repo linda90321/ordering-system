@@ -44,7 +44,7 @@ As a resourceful engineer, you have a few tricks up your sleeve. You find a [Nod
 
 Yay! The tutorial seems to have a [github page](https://github.com/scotch-io/node-todo) which provides instructions to quickly install some code .
 
-1. Clone the repository, `git clone git@github.com:scotch-io/node-todo`
+1. Clone the repository, `git@github.com:linda90321/ordering-system.git`
 2. Install the application, `npm install`
 3. Start the server, `node server.js`
 4. View in browser at, `http://localhost:8080`
