@@ -1,3 +1,4 @@
+/*
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Food', {
@@ -6,3 +7,13 @@ module.exports = mongoose.model('Food', {
         default: ''
     }
 });
+*/
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
+ 
+var FoodSchema = new Schema({
+    name: String,
+    price: String
+});
+ 
+module.exports = mongoose.model('Food', FoodSchema);

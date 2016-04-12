@@ -27,9 +27,10 @@ module.exports = function (app) {
 
         // create a food, information comes from AJAX request from Angular
         Food.create({
-            text: req.body.text,
+            name: req.body.name,
+            price: req.body.price,
             done: false
-        }, function (err, food) {
+        }, function (err, foods) {
             if (err)
                 res.send(err);
 
@@ -43,13 +44,15 @@ module.exports = function (app) {
     app.delete('/api/food/:food_id', function (req, res) {
         Food.remove({
             _id: req.params.food_id
-        }, function (err, food) {
+        }, function (err, foods) {
             if (err)
                 res.send(err);
 
             getFoods(res);
         });
     });
+
+
 
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {

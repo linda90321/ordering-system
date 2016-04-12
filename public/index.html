@@ -45,7 +45,7 @@
 				<!-- LOOP OVER THE FoodS IN $scope.foods -->
 				<div class="checkbox" ng-repeat="food in foods">
 					<label>
-						<input type="checkbox" ng-click="deleteFood(food._id)"> {{ food.text }}
+						<input type="checkbox" ng-click="deleteFood(food._id)"> {{ food.name }} {{ food.price }}
 					</label>
 				</div>
 
@@ -61,13 +61,26 @@
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
 					<div class="form-group">
-
+                        <div class = "col-md-4">
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-						<input type="text" class="form-control input-lg text-center" placeholder="Food Name" ng-model="formData.text">
+						<input type="text" class="form-control input-lg text-center" placeholder="Food Name" ng-model="formData.name">
+					</div>
+					<div class = "col-md-4">
+						<input type="text" class="form-control input-lg text-center" placeholder="Food Price" ng-model="formData.price">
 					</div>
 
+					<div class = "col-md-4">
 					<!-- createFood() WILL CREATE NEW FoodS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createFood()">Add</button>
+					     <button type="submit" class="btn btn-primary btn-lg" ng-click="createFood()">Add Food</button>
+				    </div>
+
+					</div>
+
+					
+					
+					 <button type="submit" class="btn btn-primary btn-lg" ng-click="totalPrice()" style="margin-top:20px;width:100%;">Total Price</button>
+					
+					
 				</form>
 			</div>
 		</div>
