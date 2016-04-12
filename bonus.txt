@@ -1,0 +1,2 @@
+1. Add the quantity for each of the food.
+2. Calculate the tax and total price based on the price and quantity of the food.
